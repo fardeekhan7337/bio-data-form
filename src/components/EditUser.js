@@ -1,12 +1,16 @@
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { useFormik } from "formik";
+import { useParams } from "react";
 import * as Yup from "yup";
 import Input from "./Input";
 import Head from "./Head";
 import Btn from "./Btn";
 
-export default function CreateUser() {
+export default function EditUser() {
+  const { id } = useParams();
+  console.log(id);
+
   const initialValues = {
     name: "",
     email: "",
@@ -56,12 +60,7 @@ export default function CreateUser() {
 
   return (
     <div>
-      <Head
-        btnType="link"
-        head="Create New User"
-        btnTxt="Users List"
-        btnLink="/"
-      />
+      <Head btnType="link" head="Edit User" btnTxt="Users List" btnLink="/" />
       <Box
         sx={{
           "& .MuiTextField-root": { m: 1, width: "100%", height: "auto" },

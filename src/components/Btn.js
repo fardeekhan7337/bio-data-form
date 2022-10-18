@@ -15,7 +15,15 @@ export default function Btn(props) {
         </Button>
       )}
       {props.btnType === "btn" && (
-        <Button variant="contained" color="success">
+        <Button
+          variant="contained"
+          color={props.color ? props.color : "success"}
+        >
+          {props.text}
+        </Button>
+      )}
+      {props.btnType === "submit" && (
+        <Button variant="contained" color="success" type="submit">
           {props.text}
         </Button>
       )}

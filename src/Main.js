@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Users from "./components/Users";
 import CreateUser from "./components/CreateUser";
+import EditUser from "./components/EditUser";
 
 export default function Main() {
   return (
@@ -26,6 +27,7 @@ export default function Main() {
             <Routes>
               <Route path="/" element={<Users />} />
               <Route path="/create_user" element={<CreateUser />} />
+              <Route path="/edit_user_/:user_id" element={<EditUser />} />
             </Routes>
           </BrowserRouter>
         </Box>

@@ -7,28 +7,39 @@ export default function input(props) {
   return (
     <div>
       {props.inpType === "checkbox" && (
-        <FormControlLabel control={<Checkbox />} label={props.label} />
+        <FormControlLabel
+          control={
+            <Checkbox
+              name={props.name}
+              onChange={props.onChange}
+              value={props.label}
+            />
+          }
+          label={props.label}
+        />
       )}
       {props.inpType === "text" && (
         <TextField
           type={props.type}
-          id="outlined-error"
+          name={props.name}
           label={props.label}
           defaultValue={props.value}
-          helperText="Please select your currency"
-          error
+          error={props.error ? true : false}
+          helperText={props.error}
+          onChange={props.onChange}
         />
       )}
       {props.inpType === "multiLine" && (
         <TextField
-          id="outlined-error"
+          name={props.name}
           label={props.label}
           defaultValue={props.value}
           multiline
           maxRows={4}
+          onChange={props.onChange}
           variant="filled"
-          helperText="Please select your currency"
-          error
+          error={props.error ? true : false}
+          helperText={props.error}
         />
       )}
     </div>
